@@ -1,0 +1,85 @@
+export function Footer() {
+    const navigation = [
+        { label: "Features", href: "#features" },
+        { label: "How it works", href: "#how-it-works" },
+        { label: "Validation", href: "#validation" },
+        { label: "Roadmap", href: "#roadmap" },
+        { label: "Early Access", href: "#cta" },
+    ];
+
+    const legal = [
+        { label: "Imprint", href: "/imprint" },
+        { label: "Privacy", href: "/privacy" },
+        { label: "Terms", href: "/terms" },
+    ];
+
+    return (
+        <footer className="bg-[#111111] text-white">
+            <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-16">
+                <div className="grid gap-12 border-b border-white/10 pb-10 md:grid-cols-2 lg:grid-cols-[1.1fr_0.7fr_0.7fr]">
+                    <div>
+                        <p className="text-2xl font-black uppercase tracking-tight italic">
+                            TRYBES
+                        </p>
+
+                        <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
+                            Multiplayer cycling game. TRYBES verwandelt reale Bewegung in
+                            Progression, Teamplay und ein Spielerlebnis, das dich wirklich
+                            wieder aufs Bike bringt.
+                        </p>
+
+                        <div className="mt-6">
+                            <a
+                                href="mailto:hello@trybes.app"
+                                className="text-sm font-semibold uppercase tracking-[0.12em] text-[#b7922f] transition hover:text-white"
+                            >
+                                hello@trybes.app
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#b7922f]">
+                            Navigation
+                        </p>
+
+                        <nav className="mt-5 flex flex-col gap-3">
+                            {navigation.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm uppercase tracking-[0.08em] text-white/75 transition hover:text-white"
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
+                        </nav>
+                    </div>
+
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#b7922f]">
+                            Legal
+                        </p>
+
+                        <div className="mt-5 flex flex-col gap-3">
+                            {legal.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm uppercase tracking-[0.08em] text-white/75 transition hover:text-white"
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-4 pt-6 text-xs uppercase tracking-[0.12em] text-white/45 sm:flex-row sm:items-center sm:justify-between">
+                    <p>© {new Date().getFullYear()} TRYBES. All rights reserved.</p>
+                    <p>Game-first. Team-based. Real movement.</p>
+                </div>
+            </div>
+        </footer>
+    );
+}

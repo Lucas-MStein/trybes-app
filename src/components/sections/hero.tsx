@@ -7,9 +7,6 @@ export function Hero() {
                         Multiplayer Cycling Game
                     </div>
 
-                    <div className="text-2xl font-black uppercase tracking-tight italic">
-                        TRYBES
-                    </div>
                 </div>
 
                 <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">

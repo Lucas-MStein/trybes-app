@@ -33,7 +33,7 @@ export function Testimonials() {
     ];
 
     return (
-        <section className="bg-[#111111] text-white">
+        <section id="validation" className="bg-[#111111] text-white">
             <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
                 <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                     <div>

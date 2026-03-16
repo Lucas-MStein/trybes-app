@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
 import { Problem } from "@/components/sections/problem";
 import { ValueProp } from "@/components/sections/value-prop";
@@ -7,10 +8,13 @@ import { Personas } from "@/components/sections/personas";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Roadmap } from "@/components/sections/roadmap";
 import { CTA } from "@/components/sections/cta";
+import { Footer } from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
       <>
+        <div id="top" />
+        <Navbar />
         <Hero />
         <Problem />
         <ValueProp />
@@ -20,6 +24,7 @@ export default function HomePage() {
         <Testimonials />
         <Roadmap />
         <CTA />
+        <Footer />
       </>
   );
 }

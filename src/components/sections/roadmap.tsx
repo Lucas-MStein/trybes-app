@@ -42,7 +42,7 @@ export function Roadmap() {
     ];
 
     return (
-        <section className="bg-[#efefef] text-[#111111]">
+        <section id="roadmap" className="bg-[#efefef] text-[#111111]">
             <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
                 <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                     <div>
