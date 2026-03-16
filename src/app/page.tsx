@@ -14,7 +14,6 @@ export default function HomePage() {
   return (
       <>
         <div id="top" />
-        <Navbar />
         <Hero />
         <Problem />
         <ValueProp />
@@ -24,7 +23,6 @@ export default function HomePage() {
         <Testimonials />
         <Roadmap />
         <CTA />
-        <Footer />
       </>
   );
 }
