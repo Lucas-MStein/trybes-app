@@ -7,8 +7,8 @@ export function Navbar() {
 
     const links = [
         { label: "Features", href: "#features" },
-        { label: "How it works", href: "#how-it-works" },
-        { label: "Validation", href: "#validation" },
+        { label: "So funktioniert’s", href: "#how-it-works" },
+        { label: "Validierung", href: "#validation" },
         { label: "Roadmap", href: "#roadmap" },
     ];
 
@@ -26,7 +26,6 @@ export function Navbar() {
                         TRYBES
                     </a>
 
-                    {/* Desktop navigation */}
                     <nav className="hidden items-center gap-8 md:flex">
                         {links.map((link) => (
                             <a
@@ -39,20 +38,18 @@ export function Navbar() {
                         ))}
                     </nav>
 
-                    {/* Desktop CTA */}
                     <a
                         href="#cta"
                         className="hidden items-center justify-center rounded-full bg-[#111111] px-5 py-3 transition hover:bg-black md:inline-flex"
                     >
             <span className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
-              Join Early Access
+              Early Access sichern
             </span>
                     </a>
 
-                    {/* Mobile menu button */}
                     <button
                         type="button"
-                        aria-label="Open menu"
+                        aria-label="Menü öffnen"
                         aria-expanded={open}
                         onClick={() => setOpen((prev) => !prev)}
                         className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[#111111] transition hover:bg-white md:hidden"
@@ -77,7 +74,6 @@ export function Navbar() {
                     </button>
                 </div>
 
-                {/* Mobile menu panel */}
                 <div
                     className={`overflow-hidden border-t border-black/5 bg-[#efefef]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
                         open ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
@@ -104,7 +100,7 @@ export function Navbar() {
                                 className="inline-flex w-full items-center justify-center rounded-full bg-[#111111] px-5 py-4 transition hover:bg-black"
                             >
                 <span className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
-                  Join Early Access
+                  Early Access sichern
                 </span>
                             </a>
                         </div>

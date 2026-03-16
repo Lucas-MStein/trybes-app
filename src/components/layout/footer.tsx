@@ -1,8 +1,8 @@
 export function Footer() {
     const navigation = [
         { label: "Features", href: "#features" },
-        { label: "How it works", href: "#how-it-works" },
-        { label: "Validation", href: "#validation" },
+        { label: "So funktioniert’s", href: "#how-it-works" },
+        { label: "Validierung", href: "#validation" },
         { label: "Roadmap", href: "#roadmap" },
         { label: "Early Access", href: "#cta" },
     ];
@@ -14,7 +14,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="bg-[#111111] text-white">
+        <footer className="border-t border-white/10 bg-[#0a0a0a] text-white">
             <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-16">
                 <div className="grid gap-12 border-b border-white/10 pb-10 md:grid-cols-2 lg:grid-cols-[1.1fr_0.7fr_0.7fr]">
                     <div>
