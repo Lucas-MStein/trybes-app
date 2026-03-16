@@ -4,28 +4,28 @@ export function Footer() {
         { label: "So funktioniert’s", href: "#how-it-works" },
         { label: "Validierung", href: "#validation" },
         { label: "Roadmap", href: "#roadmap" },
-        { label: "Early Access", href: "#cta" },
     ];
 
     const legal = [
-        { label: "Imprint", href: "/imprint" },
-        { label: "Privacy", href: "/privacy" },
-        { label: "Terms", href: "/terms" },
+        { label: "Impressum", href: "/imprint" },
+        { label: "Datenschutz", href: "/privacy" },
+        { label: "Nutzungsbedingungen", href: "/terms" },
     ];
 
     return (
         <footer className="border-t border-white/10 bg-[#0a0a0a] text-white">
             <div className="mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-16">
                 <div className="grid gap-12 border-b border-white/10 pb-10 md:grid-cols-2 lg:grid-cols-[1.1fr_0.7fr_0.7fr]">
+
+                    {/* Brand */}
                     <div>
                         <p className="text-2xl font-black uppercase tracking-tight italic">
                             TRYBES
                         </p>
 
                         <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
-                            Multiplayer cycling game. TRYBES verwandelt reale Bewegung in
-                            Progression, Teamplay und ein Spielerlebnis, das dich wirklich
-                            wieder aufs Bike bringt.
+                            TRYBES verwandelt reale Bewegung in Progression, Teamplay
+                            und ein echtes Spielerlebnis auf dem Bike.
                         </p>
 
                         <div className="mt-6">
@@ -38,6 +38,7 @@ export function Footer() {
                         </div>
                     </div>
 
+                    {/* Navigation */}
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#b7922f]">
                             Navigation
@@ -56,6 +57,7 @@ export function Footer() {
                         </nav>
                     </div>
 
+                    {/* Legal */}
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#b7922f]">
                             Legal
@@ -73,10 +75,11 @@ export function Footer() {
                             ))}
                         </div>
                     </div>
+
                 </div>
 
                 <div className="flex flex-col gap-4 pt-6 text-xs uppercase tracking-[0.12em] text-white/45 sm:flex-row sm:items-center sm:justify-between">
-                    <p>© {new Date().getFullYear()} TRYBES. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} TRYBES</p>
                     <p>Game-first. Team-based. Real movement.</p>
                 </div>
             </div>
