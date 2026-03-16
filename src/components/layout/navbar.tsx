@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
@@ -20,10 +21,18 @@ export function Navbar() {
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
                     <a
                         href="#top"
-                        className="text-xl font-black uppercase tracking-tight italic text-[#111111]"
+                        className="flex items-center"
                         onClick={handleClose}
+                        aria-label="Zur Startseite"
                     >
-                        TRYBES
+                        <Image
+                            src="/images/logos/trybes-logo.png"
+                            alt="TRYBES"
+                            width={180}
+                            height={40}
+                            className="h-8 w-auto"
+                            priority
+                        />
                     </a>
 
                     <nav className="hidden items-center gap-8 md:flex">
