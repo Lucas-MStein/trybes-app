@@ -42,18 +42,18 @@ export function CTA() {
     }
 
     return (
-        <Section id="cta" tone="light">
+        <Section id="cta" tone="dark">
             <div className="mx-auto max-w-3xl text-center">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#b7922f]">
                     Join the movement
                 </p>
 
-                <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
+                <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl text-white">
                     Dein nächster Ride
                     <span className="block">könnte eine Mission sein.</span>
                 </h2>
 
-                <p className="mt-8 text-lg leading-relaxed text-[#4d4d4d] sm:text-xl">
+                <p className="mt-8 text-lg leading-relaxed text-white/70 sm:text-xl">
                     Werde Teil der ersten TRYBES Riders und begleite den Start von
                     Game-first Cycling.
                 </p>
@@ -69,13 +69,13 @@ export function CTA() {
                         onChange={(event) => setEmail(event.target.value)}
                         placeholder="Deine E-Mail-Adresse"
                         required
-                        className="h-14 flex-1 rounded-full border border-black/10 bg-white px-6 text-base text-[#111111] outline-none transition placeholder:text-[#6b6b6b] focus:border-[#b7922f]"
+                        className="h-14 flex-1 rounded-full border border-white/15 bg-white/10 px-6 text-base text-white outline-none transition placeholder:text-white/40 focus:border-[#b7922f]"
                     />
 
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="inline-flex h-14 items-center justify-center rounded-full bg-[#111111] px-8 text-sm font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
+                        className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold uppercase tracking-[0.12em] text-[#111111] transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60"
                     >
                         {status === "loading" ? "Wird gesendet..." : "Early Access sichern"}
                     </button>
@@ -84,14 +84,14 @@ export function CTA() {
                 {message ? (
                     <p
                         className={`mt-5 text-sm ${
-                            status === "success" ? "text-green-700" : "text-red-600"
+                            status === "success" ? "text-[#b7922f]" : "text-red-400"
                         }`}
                     >
                         {message}
                     </p>
                 ) : null}
 
-                <p className="mt-4 text-sm text-[#6b6b6b]">
+                <p className="mt-4 text-sm text-white/40">
                     Kein Spam. Nur Updates zum Launch und zum Produkt.
                 </p>
             </div>
