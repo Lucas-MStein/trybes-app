@@ -1,7 +1,7 @@
 export function Footer() {
     const navigation = [
         { label: "Features", href: "#features" },
-        { label: "So funktioniert’s", href: "#how-it-works" },
+        { label: "How It Works", href: "#how-it-works" },
         { label: "Roadmap", href: "#roadmap" },
     ];
 
