@@ -1,23 +1,56 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
     const [open, setOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
+    const [scrolled, setScrolled] = useState(false);
 
     const links = [
-        { label: "Features", href: "#features" },
-        { label: "So funktioniert’s", href: "#how-it-works" },
-        { label: "Validierung", href: "#validation" },
-        { label: "Roadmap", href: "#roadmap" },
+        { label: "Features", href: "#features", id: "features" },
+        { label: "How it works", href: "#how-it-works", id: "how-it-works" },
+        { label: "Roadmap", href: "#roadmap", id: "roadmap" },
     ];
 
     const handleClose = () => setOpen(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 8);
+
+            const sections = links
+                .map((link) => document.getElementById(link.id))
+                .filter(Boolean) as HTMLElement[];
+
+            const scrollPosition = window.scrollY + 140;
+
+            for (const section of sections) {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+
+                if (scrollPosition >= top && scrollPosition < top + height) {
+                    setActiveSection(section.id);
+                    return;
+                }
+            }
+
+            setActiveSection("");
+        };
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <header className="sticky top-0 z-50 w-full">
-            <div className="border-b border-black/5 bg-[#efefef]/80 backdrop-blur-xl">
+            <div
+                className={`border-b border-black/5 bg-[#efefef]/80 backdrop-blur-xl transition-shadow duration-300 ${
+                    scrolled ? "shadow-[0_8px_30px_rgba(0,0,0,0.06)]" : ""
+                }`}
+            >
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
                     <a
                         href="#top"
@@ -30,21 +63,29 @@ export function Navbar() {
                             alt="TRYBES"
                             width={180}
                             height={40}
-                            className="h-8 w-auto"
+                            className="h-7 w-auto object-contain"
                             priority
                         />
                     </a>
 
-                    <nav className="hidden items-center gap-8 md:flex">
-                        {links.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="text-sm font-semibold uppercase tracking-[0.12em] text-[#4d4d4d] transition hover:text-[#111111]"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                    <nav className="hidden items-center gap-6 md:flex">
+                        {links.map((link) => {
+                            const isActive = activeSection === link.id;
+
+                            return (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`text-sm font-semibold uppercase tracking-[0.12em] transition ${
+                                        isActive
+                                            ? "text-[#111111]"
+                                            : "text-[#6b6b6b] hover:text-[#111111]"
+                                    }`}
+                                >
+                                    {link.label}
+                                </a>
+                            );
+                        })}
                     </nav>
 
                     <a
