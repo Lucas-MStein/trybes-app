@@ -3,14 +3,10 @@ import Image from "next/image";
 export function Hero() {
     return (
         <section className="relative overflow-hidden bg-[#efefef] text-[#111111]">
-            <div className="mx-auto max-w-7xl px-6 pt-24 pb-20 lg:px-10 lg:pt-32 lg:pb-24">
-
-                {/* Grid Layout */}
-                <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-
+            <div className="mx-auto max-w-7xl px-6 pb-20 pt-24 lg:px-10 lg:pb-24 lg:pt-32">
+                <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
                     {/* LEFT: Text */}
                     <div className="max-w-4xl">
-
                         <p className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-[#b7922f]">
                             Game-first. Team-based. Real movement.
                         </p>
@@ -25,24 +21,20 @@ export function Hero() {
                             Fortschritt, jede Mission zählt für dein Team und aus Training wird
                             endlich ein echtes Erlebnis.
                         </p>
-
                     </div>
 
                     {/* RIGHT: Image */}
-                    <div className="relative flex items-center justify-center lg:justify-end">
-
+                    <div className="relative flex items-start justify-center lg:justify-end">
                         <Image
                             src="/images/hero/Trybe-11.png"
                             alt="TRYBES Rider"
-                            width={400}
-                            height={600}
-                            className="h-auto w-full max-w-[240px] object-contain sm:max-w-[260px] lg:max-w-[300px] xl:max-w-[320px] lg:-translate-y-8 xl:-translate-y-12 lg:translate-x-4 xl:translate-x-8"
+                            width={280}
+                            height={420}
+                            className="h-auto w-full max-w-[160px] object-contain sm:max-w-[180px] lg:max-w-[200px] xl:max-w-[220px]"
                             priority
                         />
-
                     </div>
                 </div>
-
             </div>
         </section>
     );
